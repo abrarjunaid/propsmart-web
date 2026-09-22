@@ -494,6 +494,20 @@ video.vid{display:block;background:#000}
 .toggle[aria-checked="false"] .sw::after{left:3px}
 .toggle b{color:var(--text);font-weight:600}
 .toggle .save{color:var(--em-deep);font-weight:600}
+.bands{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-bottom:1.2rem}
+.band{position:relative;border:1px solid var(--line);background:var(--card);border-radius:16px;padding:1.2rem 1.3rem;transition:border-color .25s,box-shadow .25s,transform .25s}
+.band.on{border-color:var(--em);box-shadow:0 0 0 1px var(--em),0 20px 44px -26px color-mix(in srgb,var(--em) 60%,transparent);transform:translateY(-3px);background:linear-gradient(180deg,color-mix(in srgb,var(--em) 8%,var(--card)),var(--card) 60%)}
+.bn{font-family:var(--display);font-weight:700;font-size:1.05rem;letter-spacing:-.01em;display:flex;align-items:center;gap:.5rem;flex-wrap:wrap}
+.tagp{font-family:var(--mono);font-size:.56rem;letter-spacing:.08em;text-transform:uppercase;color:var(--em-deep);background:var(--em-tint);border:1px solid var(--em-tint-2);padding:.15rem .45rem;border-radius:999px;font-weight:600}
+.br{font-size:.8rem;color:var(--text-3);margin-top:.15rem}
+.bp{display:flex;align-items:baseline;gap:.25rem;margin-top:.7rem;font-family:var(--display);font-weight:800;letter-spacing:-.04em;font-variant-numeric:tabular-nums;font-size:2.4rem;line-height:1}
+.bp small{font-size:.38em;font-weight:700;color:var(--text-3)}
+.band.on .bp{color:var(--em-deep)}
+.bv{display:inline-block;transition:opacity .2s,transform .2s}
+.bv.sw{opacity:0;transform:translateY(-.3em)}
+.bu{font-size:.76rem;color:var(--text-3);margin-top:.3rem}
+.calc-rate{font-family:var(--mono);font-size:.7rem;color:var(--em-deep);margin-top:-.1rem}
+@media (max-width:760px){.bands{grid-template-columns:1fr}}
 .plans{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(0,1fr);gap:1.2rem;align-items:stretch}
 .plan{position:relative;background:var(--card);border:1px solid var(--line);border-radius:20px;padding:1.9rem;display:flex;flex-direction:column;gap:1.4rem}
 .plan.pop{border-color:var(--em);box-shadow:0 0 0 1px var(--em),0 30px 60px -30px color-mix(in srgb,var(--em) 45%,transparent);background:linear-gradient(180deg,color-mix(in srgb,var(--em) 8%,var(--card)) 0%,var(--card) 42%)}
@@ -516,7 +530,7 @@ video.vid{display:block;background:#000}
 .plan li{display:flex;gap:.6rem;font-size:.9rem;color:var(--text-2)}
 .plan li svg{width:16px;height:16px;flex-shrink:0;margin-top:.15rem;stroke:var(--em-deep)}
 .plan .btn{margin-top:auto;justify-content:center}
-.calc{border:1px solid var(--line-2);border-radius:14px;background:color-mix(in srgb,var(--paper) 72%,var(--card));padding:1.1rem 1.2rem;display:flex;flex-direction:column;gap:.7rem}
+.calc{border:1px solid var(--line-2);border-radius:14px;background:color-mix(in srgb,var(--paper) 72%,var(--card));padding:1.1rem 1.2rem;display:flex;flex-direction:column;gap:.7rem;margin-top:1.1rem}
 .calc-h{display:flex;justify-content:space-between;align-items:baseline;font-size:.88rem;font-weight:600}
 .calc-n{font-family:var(--display);font-size:1.5rem;font-weight:800;letter-spacing:-.03em;color:var(--em-deep);font-variant-numeric:tabular-nums}
 .calc input[type=range]{-webkit-appearance:none;appearance:none;width:100%;height:6px;border-radius:999px;background:linear-gradient(var(--em),var(--em)) 0/var(--fill,40%) 100% no-repeat var(--line-2);outline:none;cursor:pointer}
@@ -1015,31 +1029,46 @@ video.vid{display:block;background:#000}
 <section class="sec" id="pricing" style="padding-top:0">
   <div class="wrap">
     <div class="pr-head rv">
-      <div><p class="eyebrow">Pricing</p><h2 style="margin-top:.8rem">One price. Every seat, every module.</h2><p class="lede">Per agent, per month. No module fees, no AI add-on, no setup charge.</p></div>
+      <div><p class="eyebrow">Pricing</p><h2 style="margin-top:.8rem">Per agent. Cheaper as your desk grows.</h2><p class="lede">Every module and the full AI suite are included at every size. No setup fee, no add-ons.</p></div>
       <button class="toggle" id="billing" role="switch" aria-checked="true">Monthly <span class="sw"></span> <b>Annual</b> <span class="save">Save 20%</span></button>
+    </div>
+
+    <div class="bands rv" id="bands">
+      <div class="band" data-min="1" data-max="10">
+        <p class="bn">Boutique</p><p class="br">1–10 agents</p>
+        <div class="bp"><small>AED</small><span class="bv" data-a="149" data-m="179">149</span></div>
+        <p class="bu">per agent / month</p>
+      </div>
+      <div class="band" data-min="11" data-max="30">
+        <p class="bn">Growing<span class="tagp">Most brokerages</span></p><p class="br">11–30 agents</p>
+        <div class="bp"><small>AED</small><span class="bv" data-a="125" data-m="149">125</span></div>
+        <p class="bu">per agent / month</p>
+      </div>
+      <div class="band" data-min="31" data-max="60">
+        <p class="bn">Scale</p><p class="br">31+ agents</p>
+        <div class="bp"><small>AED</small><span class="bv" data-a="109" data-m="129">109</span></div>
+        <p class="bu">per agent / month</p>
+      </div>
     </div>
 
     <div class="plans rv">
       <div class="plan pop">
-        <span class="pop-tag">Most brokerages</span>
         <div class="plan-top">
           <div>
-            <h3>Propsmart</h3>
-            <p class="for">Everything in the platform, for every agent on your desk.</p>
-            <div class="price"><b><small>$</small><span class="amt" data-m="36" data-a="29">29</span></b><span class="per">per agent / month</span></div>
-            <p class="bill" data-bill>Billed annually · $348 per agent / year</p>
-            <p class="aed mono" id="aedNote">≈ AED 107 per agent / month</p>
+            <h3>Work out your number</h3>
+            <p class="for">Drag to your team size. The rate drops automatically as you grow.</p>
+            <div class="calc">
+              <div class="calc-h"><label for="agents">Agents on your desk</label><output class="calc-n" id="agentsOut">25</output></div>
+              <input id="agents" type="range" min="1" max="60" value="25" step="1" aria-label="Number of agents">
+              <p class="calc-rate" id="rateNote">AED 125 per agent · Growing band</p>
+              <div class="calc-out">
+                <div><span>Monthly total</span><b id="perMo">AED 3,125</b></div>
+                <div><span>Billed annually</span><b id="perYr">AED 37,500</b></div>
+                <div class="save-box"><span>Saved vs monthly</span><b id="saveYr">AED 7,200</b></div>
+              </div>
+            </div>
           </div>
           <ul><li><svg viewBox="0 0 16 16" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8.5l3 3 7-7"/></svg>Lead pipeline, routing &amp; rotation</li><li><svg viewBox="0 0 16 16" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8.5l3 3 7-7"/></svg>Call tracker &amp; daily targets</li><li><svg viewBox="0 0 16 16" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8.5l3 3 7-7"/></svg>Listings &amp; buildings database</li><li><svg viewBox="0 0 16 16" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8.5l3 3 7-7"/></svg>Deals, commissions &amp; P&amp;L</li><li><svg viewBox="0 0 16 16" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8.5l3 3 7-7"/></svg>Portal + WhatsApp integrations</li><li><svg viewBox="0 0 16 16" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8.5l3 3 7-7"/></svg>The full AI suite, included</li></ul>
-        </div>
-        <div class="calc">
-          <div class="calc-h"><label for="agents">How many agents?</label><output class="calc-n" id="agentsOut">25</output></div>
-          <input id="agents" type="range" min="3" max="60" value="25" step="1" aria-label="Number of agents">
-          <div class="calc-out">
-            <div><span>Your monthly total</span><b id="perMo">$725</b></div>
-            <div><span>Billed annually</span><b id="perYr">$8,700</b></div>
-            <div class="save-box"><span>You save vs monthly</span><b id="saveYr">$2,100</b></div>
-          </div>
         </div>
         <a class="btn btn-em" href="#demo"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="12" height="11" rx="2"/><path d="M2 7h12M5.5 1.5v3M10.5 1.5v3M6 10.5l1.5 1.5 3-3"/></svg>Book a demo</a>
       </div>
@@ -1049,7 +1078,7 @@ video.vid{display:block;background:#000}
           <div>
             <h3>Enterprise</h3>
             <p class="for">Multi-office operations with workflows of their own.</p>
-            <div class="price"><b>Custom</b><span class="per">40+ agents</span></div>
+            <div class="price"><b>Custom</b><span class="per">60+ agents</span></div>
             <p class="bill">Volume rate &amp; custom module programme</p>
           </div>
           <ul>
@@ -1062,7 +1091,7 @@ video.vid{display:block;background:#000}
         <a class="btn btn-ghost" href="#demo">Talk to us</a>
       </div>
     </div>
-    <p class="pr-note rv">Prices in USD, excluding VAT. Indicative for planning — final pricing is confirmed on your demo.</p>
+    <p class="pr-note rv">Prices in AED, excluding VAT. Indicative for planning — final pricing is confirmed on your demo.</p>
   </div>
 </section>
 
@@ -1250,25 +1279,27 @@ video.vid{display:block;background:#000}
   }),{threshold:.5});
   rio.observe(ring);
 
-  // pricing: per-agent calculator + billing toggle
+  // pricing: volume bands + calculator
   const bill=document.getElementById('billing'), agents=document.getElementById('agents');
-  const RATE={annual:29,monthly:36}, AED=3.6725;
-  const fmt=n=>n.toLocaleString('en-US');
-  const usd=n=>'$'+fmt(Math.round(n));
+  const BANDS=[...document.querySelectorAll('.band')].map(el=>({el,min:+el.dataset.min,max:+el.dataset.max,
+    a:+el.querySelector('.bv').dataset.a, m:+el.querySelector('.bv').dataset.m, name:el.querySelector('.bn').firstChild.textContent.trim()}));
+  const aed=n=>'AED '+Math.round(n).toLocaleString('en-US');
   function render(){
-    const annual=bill.getAttribute('aria-checked')==='true';
-    const rate=annual?RATE.annual:RATE.monthly, n=+agents.value;
-    const amt=document.querySelector('.plan .amt');
-    amt.classList.add('sw');
-    setTimeout(()=>{ amt.textContent=rate; amt.classList.remove('sw'); },reduce?0:160);
-    document.querySelector('[data-bill]').textContent=annual?`Billed annually · $${RATE.annual*12} per agent / year`:'Billed monthly · cancel any time';
-    document.getElementById('aedNote').textContent=`≈ AED ${Math.round(rate*AED)} per agent / month`;
+    const annual=bill.getAttribute('aria-checked')==='true', n=+agents.value;
+    BANDS.forEach(b=>{
+      const v=b.el.querySelector('.bv'), next=annual?b.a:b.m;
+      if(v.textContent!==String(next)){ v.classList.add('sw'); setTimeout(()=>{v.textContent=next;v.classList.remove('sw');},reduce?0:160); }
+      b.el.classList.toggle('on', n>=b.min && n<=b.max);
+    });
+    const band=BANDS.find(b=>n>=b.min&&n<=b.max)||BANDS[BANDS.length-1];
+    const rate=annual?band.a:band.m, mRate=band.m;
     document.getElementById('agentsOut').textContent=n;
-    document.getElementById('perMo').textContent=usd(n*rate);
-    document.getElementById('perYr').textContent=usd(n*rate*12);
-    document.getElementById('saveYr').textContent=usd(n*(RATE.monthly-RATE.annual)*12);
+    document.getElementById('rateNote').textContent=`AED ${rate} per agent · ${band.name} band`;
+    document.getElementById('perMo').textContent=aed(n*rate);
+    document.getElementById('perYr').textContent=aed(n*rate*12);
+    document.getElementById('saveYr').textContent=aed(n*(mRate-band.a)*12);
     document.querySelector('.calc .save-box').style.display=annual?'':'none';
-    agents.style.setProperty('--fill',((n-3)/57*100).toFixed(1)+'%');
+    agents.style.setProperty('--fill',((n-1)/59*100).toFixed(1)+'%');
   }
   bill.addEventListener('click',()=>{ bill.setAttribute('aria-checked',bill.getAttribute('aria-checked')!=='true'); render(); });
   agents.addEventListener('input',render);
