@@ -419,57 +419,69 @@ footer nav{display:flex;gap:1.4rem;font-size:.86rem;color:var(--text-2)}
 .chaos-band span{color:var(--ib-text-2);font-size:.92rem}
 @media (max-width:900px){.chaos-grid{grid-template-columns:1fr}.chaos-intro{border-right:0;border-bottom:1px solid var(--line-2)}.chaos-item{padding:1.3rem 1.5rem}.chaos-band{padding:1.2rem 1.5rem}}
 
-/* AI bento */
-.ai{display:grid;grid-template-columns:repeat(6,1fr);gap:1.2rem}
-.ac{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:1.5rem;display:flex;flex-direction:column;gap:.9rem;min-width:0}
-.ac.big{grid-column:span 3;grid-row:span 2}
-.ac.mid{grid-column:span 3}
-.ac.sm{grid-column:span 2}
-.ac .tag{display:inline-flex;align-items:center;gap:.4rem;font-family:var(--mono);font-size:.64rem;letter-spacing:.1em;text-transform:uppercase;color:var(--em-deep);font-weight:600}
-.ac .tag i{width:6px;height:6px;border-radius:50%;background:var(--em)}
-.ac h3{font-size:1.2rem}
-.ac p{color:var(--text-2);font-size:.92rem}
+/* AI */
+.ai-top{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem}
+.ac{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:1.5rem;display:flex;flex-direction:column;gap:1.1rem;min-width:0}
+.ac-h{display:flex;flex-direction:column;gap:.5rem}
+.ac h3{font-size:1.25rem}
+.ac .tag,.am .tag{display:inline-flex;align-items:center;gap:.4rem;font-family:var(--mono);font-size:.64rem;letter-spacing:.1em;text-transform:uppercase;color:var(--em-deep);font-weight:600}
+.ac .tag i,.am .tag i{width:6px;height:6px;border-radius:50%;background:var(--em)}
 .ac .demo{margin-top:auto;border:1px solid var(--line-2);border-radius:12px;background:color-mix(in srgb,var(--paper) 70%,var(--card));padding:1rem;font-size:.8rem}
+.ai-row{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-top:1.2rem}
+.am{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:1.2rem;display:flex;flex-direction:column;gap:.8rem;min-width:0}
+.am-t{font-family:var(--display);font-weight:700;font-size:1rem;letter-spacing:-.01em;line-height:1.25;text-wrap:balance}
+.am>.mk,.am>.bs,.am>.rt,.am>.chg{margin-top:auto;border-top:1px solid var(--line-2);padding-top:.8rem;font-size:.78rem}
+.am.accent{background:var(--em-tint);border-color:var(--em-tint-2)}
+.am.accent .chg{border-color:var(--em-tint-2)}
 .np{display:flex;flex-direction:column;gap:.7rem}
 .np .lab{font-family:var(--mono);font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:var(--text-3)}
-.np .raw{font-family:var(--mono);font-size:.76rem;color:var(--text-2);background:var(--card);border:1px solid var(--line-2);border-radius:8px;padding:.7rem .8rem;line-height:1.5}
+.np .raw{font-family:var(--mono);font-size:.74rem;color:var(--text-2);background:var(--card);border:1px solid var(--line-2);border-radius:8px;padding:.7rem .8rem;line-height:1.5}
 .np .btn-ai{align-self:flex-start;display:inline-flex;align-items:center;gap:.4rem;padding:.4rem .7rem;border-radius:7px;background:var(--em);color:#06261B;font-weight:600;font-size:.74rem}
 .np .btn-ai.busy{animation:glow 1s ease-in-out infinite}
 @keyframes glow{50%{box-shadow:0 0 0 6px color-mix(in srgb,var(--em) 25%,transparent)}}
-.np .out{background:var(--card);border:1px solid var(--em-tint-2);border-radius:8px;padding:.7rem .8rem;min-height:5.4em;line-height:1.55;color:var(--text)}
+.np .out{background:var(--card);border:1px solid var(--em-tint-2);border-radius:8px;padding:.7rem .8rem;min-height:5.2em;line-height:1.55;color:var(--text)}
 .np .out .cur{display:inline-block;width:2px;height:1em;background:var(--em);vertical-align:-.15em;margin-left:1px;animation:blink 1s steps(2) infinite}
 @keyframes blink{50%{opacity:0}}
 .ql{display:grid;grid-template-columns:auto 1fr;gap:1rem;align-items:center}
-.ring{width:82px;height:82px;border-radius:50%;display:grid;place-items:center;background:conic-gradient(var(--em) calc(var(--p)*1%),var(--line-2) 0);position:relative}
+.ring{width:86px;height:86px;border-radius:50%;display:grid;place-items:center;background:conic-gradient(var(--em) calc(var(--p)*1%),var(--line-2) 0);position:relative}
 .ring::after{content:"";position:absolute;inset:7px;border-radius:50%;background:var(--card)}
-.ring b{position:relative;font-family:var(--display);font-size:1.4rem;font-weight:800;letter-spacing:-.03em}
+.ring b{position:relative;font-family:var(--display);font-size:1.5rem;font-weight:800;letter-spacing:-.03em}
 .ring small{position:relative;display:block;font-size:.55rem;color:var(--text-3);text-align:center;font-family:var(--mono);letter-spacing:.08em}
-.ql .rs{display:flex;flex-direction:column;gap:.35rem}
-.ql .rs div{display:flex;gap:.45rem;align-items:flex-start;color:var(--text-2);font-size:.76rem;line-height:1.35}
+.ql .rs{display:flex;flex-direction:column;gap:.4rem}
+.ql .rs div{display:flex;gap:.45rem;align-items:flex-start;color:var(--text-2);font-size:.78rem;line-height:1.35}
 .ql .rs svg{width:12px;height:12px;flex-shrink:0;margin-top:.15rem;stroke:var(--em-deep)}
-.ql .hd{grid-column:1/-1;display:flex;justify-content:space-between;align-items:center;font-weight:600;font-size:.82rem;padding-bottom:.6rem;border-bottom:1px solid var(--line-2)}
-.mk{display:flex;flex-direction:column;gap:.4rem}
-.mk .row{display:flex;justify-content:space-between;padding:.4rem .6rem;background:var(--card);border:1px solid var(--line-2);border-radius:7px}
+.ql .hd{grid-column:1/-1;display:flex;justify-content:space-between;align-items:center;gap:.6rem;font-weight:600;font-size:.8rem;padding-bottom:.6rem;border-bottom:1px solid var(--line-2)}
+.mk,.bs,.rt{display:flex;flex-direction:column;gap:.4rem}
+.mk .row{display:flex;justify-content:space-between;gap:.6rem;padding:.35rem .55rem;background:color-mix(in srgb,var(--paper) 70%,var(--card));border-radius:7px}
 .mk .row span{color:var(--text-2)}
 .mk .row b{font-family:var(--mono);font-size:.7rem;font-weight:500}
-.mk .src{font-family:var(--mono);font-size:.6rem;color:var(--text-3);margin-top:.2rem}
-.bs{display:flex;flex-direction:column;gap:.45rem}
-.bs .r{display:grid;grid-template-columns:1fr auto;gap:.6rem;align-items:center;font-size:.76rem}
-.bs .r .bar{grid-column:1/-1;height:6px;background:var(--line-2);border-radius:999px;overflow:hidden}
+.bs .r{display:grid;grid-template-columns:1fr auto;gap:.5rem;align-items:center;font-size:.76rem}
+.bs .r .bar{grid-column:1/-1;height:5px;background:var(--line-2);border-radius:999px;overflow:hidden;margin-bottom:.25rem}
 .bs .r .bar i{display:block;height:100%;background:var(--em);border-radius:999px}
 .bs .r b{font-family:var(--mono);font-size:.66rem;font-weight:500;color:var(--em-deep)}
-.rt{display:flex;flex-direction:column;gap:.5rem}
-.rt .lead{display:flex;justify-content:space-between;align-items:center;padding:.5rem .6rem;background:var(--card);border:1px solid var(--line-2);border-radius:7px;font-size:.76rem}
-.rt .arrow{text-align:center;color:var(--em);font-size:.9rem;line-height:1}
-.rt .agent{display:flex;align-items:center;gap:.5rem;padding:.5rem .6rem;background:var(--em-tint);border:1px solid var(--em-tint-2);border-radius:7px;font-size:.76rem}
+.rt .lead{display:flex;justify-content:space-between;align-items:center;gap:.5rem;padding:.4rem .55rem;background:color-mix(in srgb,var(--paper) 70%,var(--card));border-radius:7px;font-size:.76rem}
+.rt .agent{display:flex;align-items:center;gap:.45rem;padding:.4rem .55rem;background:var(--em-tint);border-radius:7px;font-size:.76rem}
 .rt .agent b{font-weight:600}
-.rt .agent span{color:var(--em-deep);font-size:.66rem;margin-left:auto;font-family:var(--mono);text-align:right}
-.ai-foot{margin-top:1.2rem;display:grid;grid-template-columns:auto 1fr;gap:1.2rem;align-items:center;padding:1.3rem 1.6rem;border:1px solid var(--line);border-radius:16px;background:var(--card)}
-.ai-foot .ic{width:44px;height:44px;border-radius:12px;background:var(--ib);display:grid;place-items:center}
-.ai-foot .ic svg{width:20px;height:20px}
-.ai-foot b{display:block;font-family:var(--display);font-weight:700;font-size:1.05rem;letter-spacing:-.01em}
-.ai-foot span{color:var(--text-2);font-size:.92rem}
-@media (max-width:1000px){.ai{grid-template-columns:repeat(2,1fr)}.ac.big,.ac.mid,.ac.sm{grid-column:span 2;grid-row:auto}}
+.rt .agent span:last-child{color:var(--em-deep);font-size:.64rem;margin-left:auto;font-family:var(--mono)}
+.chg.mini div{grid-template-columns:3.2ch 1fr}
+@media (max-width:1000px){.ai-row{grid-template-columns:1fr 1fr}}
+@media (max-width:760px){.ai-top{grid-template-columns:1fr}.ai-row{grid-template-columns:1fr}}
+
+/* video */
+.vid{position:relative;aspect-ratio:16/9;width:100%;border:1px solid var(--line);border-radius:20px;overflow:hidden;background:var(--ib);display:grid;place-items:center;box-shadow:var(--shadow-lg)}
+video.vid{display:block;background:#000}
+.vid-grid{position:absolute;inset:0;background-image:linear-gradient(var(--ib-line) 1px,transparent 1px),linear-gradient(90deg,var(--ib-line) 1px,transparent 1px);background-size:56px 56px;mask:radial-gradient(70% 60% at 50% 50%,#000,transparent);-webkit-mask:radial-gradient(70% 60% at 50% 50%,#000,transparent);opacity:.5}
+.vid-mid{position:relative;text-align:center;display:flex;flex-direction:column;align-items:center;gap:.6rem;padding:1rem}
+.play{width:72px;height:72px;border-radius:50%;background:var(--em);color:#06261B;display:grid;place-items:center;box-shadow:0 12px 40px -8px color-mix(in srgb,var(--em) 70%,transparent);transition:transform .2s}
+.play svg{width:30px;height:30px;margin-left:3px}
+.play::after{content:"";position:absolute;width:72px;height:72px;border-radius:50%;border:1px solid var(--em);animation:halo 2.6s ease-out infinite}
+@keyframes halo{0%{transform:scale(1);opacity:.7}100%{transform:scale(1.9);opacity:0}}
+.play:hover{transform:scale(1.06)}
+.vid-t{font-family:var(--display);font-weight:700;font-size:1.15rem;color:var(--ib-text);letter-spacing:-.01em;margin-top:.4rem}
+.vid-s{font-size:.86rem;color:var(--ib-text-3)}
+.vid-bar{position:absolute;left:0;right:0;bottom:0;display:flex;align-items:center;gap:.8rem;padding:.9rem 1.2rem;font-size:.66rem;color:var(--ib-text-3);background:linear-gradient(transparent,rgba(0,0,0,.35))}
+.vid-bar .line{flex:1;height:3px;border-radius:999px;background:var(--ib-line);overflow:hidden}
+.vid-bar .line i{display:block;height:100%;width:0;background:var(--em);border-radius:999px}
 
 /* pricing */
 .pr-head{display:flex;justify-content:space-between;align-items:flex-end;gap:2rem;margin-bottom:2.5rem;flex-wrap:wrap}
@@ -535,7 +547,7 @@ footer nav{display:flex;gap:1.4rem;font-size:.86rem;color:var(--text-2)}
 .rv.pre{opacity:0;transform:translateY(22px)}
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{animation-duration:.001s!important;animation-iteration-count:1!important;transition-duration:.001s!important}
-  .w>span{transform:none}.rv.pre{opacity:1;transform:none}.marq-track{animation:none}.frame::after{display:none}.proof{opacity:1;animation:none}.app-side>*,.app-main>*,.app-feed>*{animation:none}
+  .w>span{transform:none}.rv.pre{opacity:1;transform:none}.marq-track{animation:none}.frame::after{display:none}.play::after{animation:none}.proof{opacity:1;animation:none}.app-side>*,.app-main>*,.app-feed>*{animation:none}
 }
 </style>
 </head>
@@ -545,7 +557,7 @@ footer nav{display:flex;gap:1.4rem;font-size:.86rem;color:var(--text-2)}
   <div class="wrap">
     <a class="brand" href="#top" aria-label="Propsmart"><svg class="wordmark" viewBox="0 0 590 132" aria-hidden="true"><g transform="translate(-67.5 -38.3) scale(0.118)" fill="none" stroke="currentColor" stroke-width="135"><path d="M707 622V1400"/><path d="M728 806L965 626L1225 792V905C1225 1060 1080 1150 890 1150" stroke-linejoin="round"/></g><text x="90" y="102" font-family="'Plus Jakarta Sans',ui-sans-serif,system-ui,sans-serif" font-weight="700" font-size="112" letter-spacing="-3" fill="currentColor">rop<tspan style="fill:var(--em-deep)">smart</tspan></text></svg></a>
     <nav class="nav-links" aria-label="Primary">
-      <a href="#chaos">Why it exists</a><a href="#modules">Modules</a><a href="#ai">AI</a><a href="#why">Bespoke</a><a href="#pricing">Pricing</a><a href="#faq">FAQ</a>
+      <a href="#chaos">Why it exists</a><a href="#modules">Modules</a><a href="#watch">Tour</a><a href="#ai">AI</a><a href="#why">Bespoke</a><a href="#pricing">Pricing</a><a href="#faq">FAQ</a>
     </nav>
     <a class="btn btn-em" href="#demo"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="12" height="11" rx="2"/><path d="M2 7h12M5.5 1.5v3M10.5 1.5v3M6 10.5l1.5 1.5 3-3"/></svg>Book a demo</a>
   </div>
@@ -673,7 +685,7 @@ footer nav{display:flex;gap:1.4rem;font-size:.86rem;color:var(--text-2)}
     <div class="rv">
       <p class="eyebrow">Why it exists</p>
       <h2 style="margin-top:.8rem">A lead that waits four hours is a lead you <span class="red">already paid for</span> and already lost.</h2>
-      <p class="lede">Portal leads land in an agent's phone. If nothing happens, nobody knows. Not the manager, not the owner, not until the month closes and the numbers are short. Propsmart was built by the people who kept finding out too late.</p>
+      <p class="lede">Portal leads land in an agent's phone. If nothing happens, nobody knows — not until the month closes short.</p>
       <ul>
         <li><i><svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5l3 3 7-7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></i><span><b>Every pushed lead is timed</b> from the moment Bayut sends it, not from the moment someone remembers it.</span></li>
         <li><i><svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5l3 3 7-7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></i><span><b>Silence is a status.</b> No note, no call, no stage change for four hours, and the lead goes red on the owner's screen with the agent's name on it.</span></li>
@@ -706,7 +718,7 @@ footer nav{display:flex;gap:1.4rem;font-size:.86rem;color:var(--text-2)}
   <div class="wrap">
     <div class="sec-head rv">
       <div><p class="eyebrow">What's inside</p><h2>Twelve modules. One set of numbers that agree with each other.</h2></div>
-      <p class="lede">Nothing is bolted on. Leads, calls, listings, buildings, deals and commission share one data layer, so the owner's dashboard and the agent's phone are looking at the same truth.</p>
+      <p class="lede">Leads, calls, listings, buildings, deals and commission on one data layer — so every screen agrees.</p>
     </div>
 
     <div class="tabs rv" role="tablist" id="tabs">
@@ -831,71 +843,97 @@ footer nav{display:flex;gap:1.4rem;font-size:.86rem;color:var(--text-2)}
 <section class="sec" id="ai" style="padding-top:0">
   <div class="wrap">
     <div class="sec-head rv">
-      <div><p class="eyebrow">Native intelligence</p><h2>AI woven through the brokerage, not bolted to the side.</h2></div>
-      <p class="lede">There is no chatbot tab. Intelligence works quietly inside the screens your team already uses: tidying notes, scoring leads, ranking buildings, choosing the right agent. And the platform itself is engineered with AI, which is why it changes as fast as your business does.</p>
+      <div><p class="eyebrow">Native intelligence</p><h2>AI where the work happens.</h2></div>
+      <p class="lede">No chatbot tab. Intelligence runs inside the screens your team already uses — and the platform itself is built with AI, which is why it changes as fast as you do.</p>
     </div>
-    <div class="ai">
-      <div class="ac big rv">
-        <span class="tag"><i></i>AI note polish</span>
-        <h3>Rough call notes become clean follow-ups, instantly.</h3>
-        <p>Agents type the way they talk. The record that lands in the lead's timeline reads like a professional wrote it, and the next step is already extracted.</p>
+
+    <div class="ai-top">
+      <div class="ac rv">
+        <div class="ac-h"><span class="tag"><i></i>Note polish</span><h3>Rough notes in. Clean timeline out.</h3></div>
         <div class="demo np">
           <span class="lab">Agent typed</span>
-          <div class="raw" id="npRaw">called no ans, try again tmrw after 5. wants 2br marina under 120k, 2 chq, moving end of oct</div>
+          <div class="raw">called no ans, try again tmrw after 5. wants 2br marina under 120k, 2 chq, moving end of oct</div>
           <span class="btn-ai" id="npBtn"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M5.6 18.4l2.1-2.1M16.3 7.7l2.1-2.1"/></svg>Polish</span>
           <span class="lab">Saved to timeline</span>
           <div class="out" id="npOut"></div>
         </div>
       </div>
-      <div class="ac mid rv">
-        <span class="tag"><i></i>AI lead qualifier</span>
-        <h3>Every new lead scored before anyone dials.</h3>
-        <p>Budget fit, timing, responsiveness and listing match, read from the enquiry and the first exchange, so the hottest leads are worked first.</p>
+      <div class="ac rv">
+        <div class="ac-h"><span class="tag"><i></i>Lead qualifier</span><h3>Scored before anyone dials.</h3></div>
         <div class="demo ql">
-          <div class="hd"><span>Daniel R. · Bayut · Marina Heights · 1 BR</span><span class="pill em">Hot</span></div>
+          <div class="hd"><span>Daniel R. · Bayut · Marina Heights</span><span class="pill em">Hot</span></div>
           <div class="ring" id="ring" style="--p:0"><div><b id="ringV">0</b><small>/ 100</small></div></div>
           <div class="rs">
-            <div><svg viewBox="0 0 16 16" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8.5l3 3 7-7"/></svg>Budget AED 110–120K matches the listing</div>
+            <div><svg viewBox="0 0 16 16" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8.5l3 3 7-7"/></svg>Budget matches the listing</div>
             <div><svg viewBox="0 0 16 16" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8.5l3 3 7-7"/></svg>Moving in 30 days, 2 cheques</div>
-            <div><svg viewBox="0 0 16 16" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8.5l3 3 7-7"/></svg>Replied to WhatsApp within 4 minutes</div>
+            <div><svg viewBox="0 0 16 16" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8.5l3 3 7-7"/></svg>Replied in 4 minutes</div>
           </div>
         </div>
       </div>
-      <div class="ac sm rv">
-        <span class="tag"><i></i>AI market intelligence</span>
-        <h3>Fresh building data, one click.</h3>
-        <p>Live listing and transaction signals for any tower, extracted and structured on the building's page.</p>
-        <div class="demo mk">
+    </div>
+
+    <div class="ai-row">
+      <div class="am rv">
+        <span class="tag"><i></i>Market intelligence</span>
+        <p class="am-t">Live building data, one click.</p>
+        <div class="mk">
           <div class="row"><span>Avg. 1 BR rent</span><b>AED 92K</b></div>
           <div class="row"><span>Live listings</span><b>14 · 3 new</b></div>
-          <div class="row"><span>Sale, last 90d</span><b>6 · AED 1.7K/sqft</b></div>
-          <div class="src">Fetched 09:41 · Lake View Tower, JLT</div>
         </div>
       </div>
-      <div class="ac sm rv">
-        <span class="tag"><i></i>AI building scoring</span>
-        <h3>Call the hottest stock first.</h3>
-        <p>Every building ranked on live signals so the afternoon's dialling goes where listings are most likely.</p>
-        <div class="demo bs">
+      <div class="am rv">
+        <span class="tag"><i></i>Building scoring</span>
+        <p class="am-t">Call the hottest stock first.</p>
+        <div class="bs">
           <div class="r"><span>Lake View Tower</span><b>94</b><span class="bar"><i style="width:94%"></i></span></div>
           <div class="r"><span>Park Towers</span><b>81</b><span class="bar"><i style="width:81%"></i></span></div>
-          <div class="r"><span>Bay Central</span><b>67</b><span class="bar"><i style="width:67%"></i></span></div>
         </div>
       </div>
-      <div class="ac sm rv">
-        <span class="tag"><i></i>Smart lead routing</span>
-        <h3>The right agent, with the reason why.</h3>
-        <p>Performance-weighted suggestions put each lead with the agent most likely to close it.</p>
-        <div class="demo rt">
-          <div class="lead"><span>Priya M. · 2 BR · Marina</span><span class="pill blue">New</span></div>
-          <div class="arrow">↓</div>
-          <div class="agent"><span class="av"></span><b>Sara</b><span>3 Marina closes · 92% reply &lt;10m</span></div>
+      <div class="am rv">
+        <span class="tag"><i></i>Smart routing</span>
+        <p class="am-t">The right agent, with the reason.</p>
+        <div class="rt">
+          <div class="lead"><span>Priya M. · 2 BR</span><span class="pill blue">New</span></div>
+          <div class="agent"><span class="av"></span><b>Sara</b><span>3 Marina closes</span></div>
+        </div>
+      </div>
+      <div class="am accent rv">
+        <span class="tag"><i></i>Built with AI</span>
+        <p class="am-t">Custom modules in days, not quarters.</p>
+        <div class="chg mini">
+          <div><span class="d">Mon</span><span class="q">"Can we recycle cold leads?"</span></div>
+          <div><span class="d">Thu</span><span class="s">Shipped, live in your workspace.</span></div>
         </div>
       </div>
     </div>
-    <div class="ai-foot rv">
-      <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#2FC38F" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M16 18l6-6-6-6M8 6l-6 6 6 6"/></svg></span>
-      <div><b>The platform is built with AI too.</b><span>Propsmart is engineered on an AI-native stack, so a custom module your brokerage needs is specified, built and shipped in days rather than waiting on a vendor's quarterly roadmap.</span></div>
+  </div>
+</section>
+
+<!-- VIDEO -->
+<section class="sec" id="watch" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div><p class="eyebrow">Product tour</p><h2>Two minutes inside Propsmart.</h2></div>
+      <p class="lede">A lead lands, gets routed, gets called, gets closed — and the commission lands in finance. The whole loop, start to finish.</p>
+    </div>
+    <!--
+      MOTION GRAPHIC GOES HERE.
+      To drop in the finished video, replace the whole <div class="vid"> below with:
+        <video class="vid" controls playsinline preload="metadata" poster="tour-poster.jpg">
+          <source src="tour.mp4" type="video/mp4">
+        </video>
+      and put tour.mp4 + tour-poster.jpg in the site/ folder.
+    -->
+    <div class="vid rv" role="img" aria-label="Product tour video, coming soon">
+      <div class="vid-grid"></div>
+      <div class="vid-mid">
+        <button class="play" type="button" aria-label="Product tour coming soon">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.5v13l11-6.5z"/></svg>
+        </button>
+        <p class="vid-t">Full product walkthrough</p>
+        <p class="vid-s">Coming soon — see it live on a demo call instead</p>
+      </div>
+      <div class="vid-bar"><span class="mono">00:00</span><span class="line"><i></i></span><span class="mono">02:10</span></div>
     </div>
   </div>
 </section>
@@ -905,7 +943,7 @@ footer nav{display:flex;gap:1.4rem;font-size:.86rem;color:var(--text-2)}
   <div class="wrap">
     <div class="sec-head rv">
       <div><p class="eyebrow">Bespoke by design</p><h2>Yours, not off the shelf.</h2></div>
-      <p class="lede">No two brokerages operate the same way, so Propsmart is never sold as-is. Your pipeline stages, commission structure, areas, portals and rules are configured around your business. When you need something the product doesn't have, we build it as a custom module and ship it in days: from a two-agent startup to a 200-agent floor, the platform bends to the desk, not the other way round.</p>
+      <p class="lede">Your stages, your splits, your areas, your rules. Need something the product doesn't have? We build it as a custom module and ship it in days — two agents or two hundred.</p>
     </div>
     <div class="why">
       <div class="wc rv">
@@ -948,7 +986,7 @@ footer nav{display:flex;gap:1.4rem;font-size:.86rem;color:var(--text-2)}
   <div class="wrap">
     <div class="sec-head rv">
       <div><p class="eyebrow">For your team</p><h2>One system. Four very different mornings.</h2></div>
-      <p class="lede">Each role opens to the screen it actually needs, with the numbers already reconciled against everyone else's.</p>
+      <p class="lede">Each role opens to the screen it needs, on numbers that already agree.</p>
     </div>
     <div class="seats rv">
       <div class="seat"><p class="eyebrow">Owner</p><h3>Know by 10am, not by the 30th.</h3><p>Deal volume, commission, active leads and who hasn't picked up the phone, on one screen.</p><div class="first">Opens first<b>Admin dashboard · alerts</b></div></div>
@@ -1044,7 +1082,7 @@ footer nav{display:flex;gap:1.4rem;font-size:.86rem;color:var(--text-2)}
     <div class="rv">
       <p class="eyebrow">Book a demo</p>
       <h2 style="margin-top:.8rem">See it running on your own leads.</h2>
-      <p class="lede">A 30-minute walkthrough of the live system, on a call with someone who runs a brokerage on it. Bring your current pipeline export if you want to see it inside Propsmart on the call.</p>
+      <p class="lede">30 minutes on the live system, with someone who runs a brokerage on it. Bring a pipeline export and we'll load it on the call.</p>
       <ol>
         <li><span><b>We look at how you work today</b>Portals, split rules, team structure, what's in the spreadsheet.</span></li>
         <li><span><b>We show the live system, not slides</b>Your kind of leads, your kind of deals, on the real product.</span></li>
@@ -1088,7 +1126,7 @@ footer nav{display:flex;gap:1.4rem;font-size:.86rem;color:var(--text-2)}
 <footer>
   <div class="wrap">
     <a class="brand" href="#top" aria-label="Propsmart"><svg class="wordmark" viewBox="0 0 590 132" aria-hidden="true"><g transform="translate(-67.5 -38.3) scale(0.118)" fill="none" stroke="currentColor" stroke-width="135"><path d="M707 622V1400"/><path d="M728 806L965 626L1225 792V905C1225 1060 1080 1150 890 1150" stroke-linejoin="round"/></g><text x="90" y="102" font-family="'Plus Jakarta Sans',ui-sans-serif,system-ui,sans-serif" font-weight="700" font-size="112" letter-spacing="-3" fill="currentColor">rop<tspan style="fill:var(--em-deep)">smart</tspan></text></svg></a>
-    <nav aria-label="Footer"><a href="#modules">Modules</a><a href="#ai">AI</a><a href="#why">Bespoke</a><a href="#pricing">Pricing</a><a href="#demo">Book a demo</a><a href="#faq">FAQ</a></nav>
+    <nav aria-label="Footer"><a href="#modules">Modules</a><a href="#watch">Tour</a><a href="#ai">AI</a><a href="#why">Bespoke</a><a href="#pricing">Pricing</a><a href="#demo">Book a demo</a><a href="#faq">FAQ</a></nav>
     <p class="small">© 2026 Propsmart · Dubai, UAE</p>
   </div>
 </footer>
