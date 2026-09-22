@@ -494,54 +494,44 @@ video.vid{display:block;background:#000}
 .toggle[aria-checked="false"] .sw::after{left:3px}
 .toggle b{color:var(--text);font-weight:600}
 .toggle .save{color:var(--em-deep);font-weight:600}
-.plans{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;align-items:stretch}
-.plan{position:relative;background:var(--card);border:1px solid var(--line);border-radius:20px;padding:1.8rem;display:flex;flex-direction:column;gap:1.1rem}
-.plan.pop{border-color:var(--em);box-shadow:0 0 0 1px var(--em),0 30px 60px -30px color-mix(in srgb,var(--em) 45%,transparent)}
-.plan .pop-tag{position:absolute;top:-13px;right:1.4rem;background:var(--em);color:#06261B;font-size:.7rem;font-weight:700;padding:.3rem .7rem;border-radius:999px}
-.plan h3{font-size:1.35rem}
-.plan .for{color:var(--text-2);font-size:.9rem;margin-top:.25rem}
-.plan .price{display:flex;align-items:baseline;gap:.5rem;margin-top:.6rem;flex-wrap:wrap}
-.plan .price b{font-family:var(--display);font-size:3.4rem;font-weight:800;letter-spacing:-.05em;line-height:.95;font-variant-numeric:tabular-nums;display:inline-flex;align-items:baseline;gap:.3rem}
-.plan .price b small{font-size:.9rem;font-weight:700;color:var(--text-3);letter-spacing:0}
+.plans{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(0,1fr);gap:1.2rem;align-items:stretch}
+.plan{position:relative;background:var(--card);border:1px solid var(--line);border-radius:20px;padding:1.9rem;display:flex;flex-direction:column;gap:1.4rem}
+.plan.pop{border-color:var(--em);box-shadow:0 0 0 1px var(--em),0 30px 60px -30px color-mix(in srgb,var(--em) 45%,transparent);background:linear-gradient(180deg,color-mix(in srgb,var(--em) 8%,var(--card)) 0%,var(--card) 42%)}
+.plan .pop-tag{position:absolute;top:-13px;right:1.6rem;background:var(--em);color:#06261B;font-size:.7rem;font-weight:700;padding:.3rem .7rem;border-radius:999px}
+.plan-top{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:1.6rem}
+.plan.pop .plan-top{align-items:start}
+.plan h3{font-size:1.4rem}
+.plan .for{color:var(--text-2);font-size:.92rem;margin-top:.3rem;max-width:32ch}
+.plan .price{display:flex;align-items:baseline;gap:.5rem;margin-top:1rem;flex-wrap:wrap}
+.plan .price b{font-family:var(--display);font-size:3.6rem;font-weight:800;letter-spacing:-.05em;line-height:.95;font-variant-numeric:tabular-nums;display:inline-flex;align-items:baseline}
+.plan .price b small{font-size:.45em;font-weight:700;color:var(--text-3)}
+.plan.pop .price b{color:var(--em-deep)}
+.plan:not(.pop) .price b{font-size:2.5rem}
 .plan .price .amt{display:inline-block;transition:opacity .2s,transform .2s}
 .plan .price .amt.sw{opacity:0;transform:translateY(-.3em)}
-.plan .price .per{color:var(--text-3);font-size:.95rem;font-weight:500}
-.plan .price .was{flex-basis:100%;font-size:.84rem;color:var(--text-3);text-decoration-color:var(--red);font-variant-numeric:tabular-nums;min-height:1.3em;display:block}
-.plan.pop .price b{color:var(--em-deep)}
-.plan.pop{background:linear-gradient(180deg,color-mix(in srgb,var(--em) 9%,var(--card)) 0%,var(--card) 45%)}
-.plan-seats{font-weight:600;font-size:.95rem;display:inline-flex;align-items:center;gap:.5rem}
-.plan-seats::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--em)}
-.plan .bill{font-family:var(--mono);font-size:.66rem;color:var(--text-3);min-height:1em}
-.plan ul{list-style:none;padding:1rem 0 0;margin:0;border-top:1px solid var(--line-2);display:flex;flex-direction:column;gap:.6rem}
-.plan li{display:flex;gap:.6rem;font-size:.92rem;color:var(--text-2)}
+.plan .price .per{color:var(--text-3);font-size:.92rem;font-weight:500}
+.plan .bill{font-family:var(--mono);font-size:.7rem;color:var(--text-3);margin-top:.5rem}
+.plan .aed{font-size:.68rem;color:var(--text-3);opacity:.75;margin-top:.2rem}
+.plan ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:.55rem;align-self:center}
+.plan li{display:flex;gap:.6rem;font-size:.9rem;color:var(--text-2)}
 .plan li svg{width:16px;height:16px;flex-shrink:0;margin-top:.15rem;stroke:var(--em-deep)}
 .plan .btn{margin-top:auto;justify-content:center}
+.calc{border:1px solid var(--line-2);border-radius:14px;background:color-mix(in srgb,var(--paper) 72%,var(--card));padding:1.1rem 1.2rem;display:flex;flex-direction:column;gap:.7rem}
+.calc-h{display:flex;justify-content:space-between;align-items:baseline;font-size:.88rem;font-weight:600}
+.calc-n{font-family:var(--display);font-size:1.5rem;font-weight:800;letter-spacing:-.03em;color:var(--em-deep);font-variant-numeric:tabular-nums}
+.calc input[type=range]{-webkit-appearance:none;appearance:none;width:100%;height:6px;border-radius:999px;background:linear-gradient(var(--em),var(--em)) 0/var(--fill,40%) 100% no-repeat var(--line-2);outline:none;cursor:pointer}
+.calc input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:22px;height:22px;border-radius:50%;background:var(--em);border:3px solid var(--card);box-shadow:0 2px 8px rgba(0,0,0,.25);cursor:grab}
+.calc input[type=range]::-moz-range-thumb{width:16px;height:16px;border-radius:50%;background:var(--em);border:3px solid var(--card);cursor:grab}
+.calc-out{display:grid;grid-template-columns:repeat(3,1fr);gap:.6rem;margin-top:.2rem}
+.calc-out div{background:var(--card);border:1px solid var(--line-2);border-radius:10px;padding:.6rem .75rem}
+.calc-out span{display:block;font-size:.66rem;color:var(--text-3)}
+.calc-out b{font-family:var(--display);font-size:1.25rem;font-weight:800;letter-spacing:-.03em;font-variant-numeric:tabular-nums;display:block;margin-top:.15rem}
+.calc-out .save-box{background:var(--em-tint);border-color:var(--em-tint-2)}
+.calc-out .save-box span{color:var(--em-deep)}
+.calc-out .save-box b{color:var(--em-deep)}
 .pr-note{font-size:.8rem;color:var(--text-3);margin-top:1.4rem}
-@media (max-width:900px){.plans{grid-template-columns:1fr}}
-
-/* dashboard motion */
-.frame{position:relative;transform-style:preserve-3d;will-change:transform}
-.frame.tilt{transition:transform .25s ease-out}
-.frame::after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(105deg,transparent 35%,color-mix(in srgb,var(--em) 14%,transparent) 50%,transparent 65%);transform:translateX(-120%);animation:sweep 1.6s cubic-bezier(.4,0,.2,1) 1.5s 1 both}
-@keyframes sweep{to{transform:translateX(120%)}}
-.app-side>*,.app-main>*,.app-feed>*{animation:up .7s cubic-bezier(.2,.7,.1,1) both}
-.app-side>*:nth-child(1){animation-delay:.75s}.app-side>*:nth-child(2){animation-delay:.8s}.app-side>*:nth-child(3){animation-delay:.85s}.app-side>*:nth-child(4){animation-delay:.9s}.app-side>*:nth-child(5){animation-delay:.95s}.app-side>*:nth-child(6){animation-delay:1s}.app-side>*:nth-child(7){animation-delay:1.05s}.app-side>*:nth-child(8){animation-delay:1.1s}.app-side>*:nth-child(9){animation-delay:1.15s}.app-side>*:nth-child(10){animation-delay:1.2s}.app-side>*:nth-child(11){animation-delay:1.25s}.app-side>*:nth-child(12){animation-delay:1.3s}
-.app-main>*:nth-child(1){animation-delay:.8s}.app-main>*:nth-child(2){animation-delay:.95s}.app-main>*:nth-child(3){animation-delay:1.1s}.app-main>*:nth-child(4){animation-delay:1.25s}.app-main>*:nth-child(5){animation-delay:1.4s}
-.app-feed>*:nth-child(1){animation-delay:1.1s}.app-feed>*:nth-child(2){animation-delay:1.25s}
-@keyframes up{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
-.tile{transition:box-shadow .3s,border-color .3s}
-.tile.flash{animation:flash 1.2s ease-out}
-@keyframes flash{0%{box-shadow:0 0 0 0 color-mix(in srgb,var(--em) 55%,transparent);border-color:var(--em)}100%{box-shadow:0 0 0 12px transparent}}
-.tile.flash .v{animation:roll .5s cubic-bezier(.2,.7,.1,1)}
-@keyframes roll{0%{transform:translateY(-.5em);opacity:0}100%{transform:none;opacity:1}}
-.chip{transition:transform .2s,background .2s}
-.chip.bump{animation:bump .5s cubic-bezier(.2,.7,.1,1)}
-@keyframes bump{30%{transform:scale(1.18);background:var(--card)}}
-.alert.red.ping{animation:ping 1.2s ease-out}
-@keyframes ping{0%{box-shadow:0 0 0 0 color-mix(in srgb,var(--red) 45%,transparent)}100%{box-shadow:0 0 0 14px transparent}}
-.ev.new{animation:evIn .5s cubic-bezier(.2,.7,.1,1) both,evGlow 1.6s ease-out}
-@keyframes evGlow{0%{border-color:var(--em);background:var(--em-tint)}100%{border-color:var(--line-2);background:var(--card)}}
-.chaos-item.rv,.chaos-band.rv,.chaos-intro.rv{transition-duration:.8s}
+@media (max-width:980px){.plans{grid-template-columns:1fr}.plan-top{grid-template-columns:1fr;gap:1.2rem}.plan ul{align-self:start}}
+@media (max-width:560px){.calc-out{grid-template-columns:1fr}}
 
 /* reveal */
 .rv{transition:opacity .7s cubic-bezier(.2,.7,.1,1),transform .7s cubic-bezier(.2,.7,.1,1)}
@@ -1025,50 +1015,54 @@ video.vid{display:block;background:#000}
 <section class="sec" id="pricing" style="padding-top:0">
   <div class="wrap">
     <div class="pr-head rv">
-      <div><p class="eyebrow">Pricing</p><h2 style="margin-top:.8rem">Built to scale with your desk.</h2><p class="lede">Clear plans for growing brokerages. Prices per agency, in AED.</p></div>
+      <div><p class="eyebrow">Pricing</p><h2 style="margin-top:.8rem">One price. Every seat, every module.</h2><p class="lede">Per agent, per month. No module fees, no AI add-on, no setup charge.</p></div>
       <button class="toggle" id="billing" role="switch" aria-checked="true">Monthly <span class="sw"></span> <b>Annual</b> <span class="save">Save 20%</span></button>
     </div>
+
     <div class="plans rv">
-      <div class="plan">
-        <div><h3>Starter</h3><p class="for">For focused boutique teams</p></div>
-        <div class="price"><b><small>AED</small><span class="amt" data-m="559" data-a="447">447</span></b><span class="per">/ month</span><s class="was" data-was>AED 559 monthly</s></div>
-        <p class="plan-seats">Up to 5 agents</p><p class="bill" data-bill>Billed annually · AED 5,364 / year</p>
-        <ul>
-          <li><svg viewBox="0 0 16 16" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8.5l3 3 7-7"/></svg>Lead pipeline &amp; routing</li>
-          <li><svg viewBox="0 0 16 16" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8.5l3 3 7-7"/></svg>Call tracker &amp; daily targets</li>
-          <li><svg viewBox="0 0 16 16" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8.5l3 3 7-7"/></svg>Listings management</li>
-          <li><svg viewBox="0 0 16 16" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8.5l3 3 7-7"/></svg>WhatsApp notifications</li>
-        </ul>
-        <a class="btn btn-ghost" href="#demo">Book a demo</a>
-      </div>
       <div class="plan pop">
-        <span class="pop-tag">Most popular</span>
-        <div><h3>Growth</h3><p class="for">For scaling Dubai brokerages</p></div>
-        <div class="price"><b><small>AED</small><span class="amt" data-m="1199" data-a="959">959</span></b><span class="per">/ month</span><s class="was" data-was>AED 1,199 monthly</s></div>
-        <p class="plan-seats">Up to 25 agents</p><p class="bill" data-bill>Billed annually · AED 11,508 / year</p>
-        <ul>
-          <li><svg viewBox="0 0 16 16" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8.5l3 3 7-7"/></svg>Everything in Starter</li>
-          <li><svg viewBox="0 0 16 16" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8.5l3 3 7-7"/></svg>Deals, commissions &amp; P&amp;L</li>
-          <li><svg viewBox="0 0 16 16" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8.5l3 3 7-7"/></svg>Buildings database &amp; AI scoring</li>
-          <li><svg viewBox="0 0 16 16" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8.5l3 3 7-7"/></svg>Agent performance</li>
-          <li><svg viewBox="0 0 16 16" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8.5l3 3 7-7"/></svg>Bayut &amp; portal integrations</li>
-        </ul>
+        <span class="pop-tag">Most brokerages</span>
+        <div class="plan-top">
+          <div>
+            <h3>Propsmart</h3>
+            <p class="for">Everything in the platform, for every agent on your desk.</p>
+            <div class="price"><b><small>$</small><span class="amt" data-m="36" data-a="29">29</span></b><span class="per">per agent / month</span></div>
+            <p class="bill" data-bill>Billed annually · $348 per agent / year</p>
+            <p class="aed mono" id="aedNote">≈ AED 107 per agent / month</p>
+          </div>
+          <ul><li><svg viewBox="0 0 16 16" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8.5l3 3 7-7"/></svg>Lead pipeline, routing &amp; rotation</li><li><svg viewBox="0 0 16 16" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8.5l3 3 7-7"/></svg>Call tracker &amp; daily targets</li><li><svg viewBox="0 0 16 16" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8.5l3 3 7-7"/></svg>Listings &amp; buildings database</li><li><svg viewBox="0 0 16 16" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8.5l3 3 7-7"/></svg>Deals, commissions &amp; P&amp;L</li><li><svg viewBox="0 0 16 16" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8.5l3 3 7-7"/></svg>Portal + WhatsApp integrations</li><li><svg viewBox="0 0 16 16" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8.5l3 3 7-7"/></svg>The full AI suite, included</li></ul>
+        </div>
+        <div class="calc">
+          <div class="calc-h"><label for="agents">How many agents?</label><output class="calc-n" id="agentsOut">25</output></div>
+          <input id="agents" type="range" min="3" max="60" value="25" step="1" aria-label="Number of agents">
+          <div class="calc-out">
+            <div><span>Your monthly total</span><b id="perMo">$725</b></div>
+            <div><span>Billed annually</span><b id="perYr">$8,700</b></div>
+            <div class="save-box"><span>You save vs monthly</span><b id="saveYr">$2,100</b></div>
+          </div>
+        </div>
         <a class="btn btn-em" href="#demo"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="12" height="11" rx="2"/><path d="M2 7h12M5.5 1.5v3M10.5 1.5v3M6 10.5l1.5 1.5 3-3"/></svg>Book a demo</a>
       </div>
+
       <div class="plan">
-        <div><h3>Enterprise</h3><p class="for">For multi-office operations</p></div>
-        <div class="price"><b>Custom</b><s class="was"></s></div>
-        <p class="plan-seats">Unlimited agents</p><p class="bill">Custom modules included</p>
-        <ul>
-          <li><svg viewBox="0 0 16 16" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8.5l3 3 7-7"/></svg>Everything in Growth</li>
-          <li><svg viewBox="0 0 16 16" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8.5l3 3 7-7"/></svg>Custom modules built for your workflow</li>
-          <li><svg viewBox="0 0 16 16" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8.5l3 3 7-7"/></svg>Advanced permissions</li>
-          <li><svg viewBox="0 0 16 16" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8.5l3 3 7-7"/></svg>Custom onboarding &amp; priority support</li>
-        </ul>
-        <a class="btn btn-ghost" href="#demo">Contact sales</a>
+        <div class="plan-top">
+          <div>
+            <h3>Enterprise</h3>
+            <p class="for">Multi-office operations with workflows of their own.</p>
+            <div class="price"><b>Custom</b><span class="per">40+ agents</span></div>
+            <p class="bill">Volume rate &amp; custom module programme</p>
+          </div>
+          <ul>
+            <li><svg viewBox="0 0 16 16" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8.5l3 3 7-7"/></svg>Everything in Propsmart</li>
+            <li><svg viewBox="0 0 16 16" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8.5l3 3 7-7"/></svg>Custom modules built for your workflow</li>
+            <li><svg viewBox="0 0 16 16" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8.5l3 3 7-7"/></svg>Multi-office roles &amp; permissions</li>
+            <li><svg viewBox="0 0 16 16" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8.5l3 3 7-7"/></svg>Dedicated onboarding &amp; priority support</li>
+          </ul>
+        </div>
+        <a class="btn btn-ghost" href="#demo">Talk to us</a>
       </div>
     </div>
-    <p class="pr-note rv">Indicative pricing shown for planning purposes. Final pricing is confirmed during your demo.</p>
+    <p class="pr-note rv">Prices in USD, excluding VAT. Indicative for planning — final pricing is confirmed on your demo.</p>
   </div>
 </section>
 
@@ -1256,21 +1250,29 @@ video.vid{display:block;background:#000}
   }),{threshold:.5});
   rio.observe(ring);
 
-  // pricing toggle
-  const bill=document.getElementById('billing');
+  // pricing: per-agent calculator + billing toggle
+  const bill=document.getElementById('billing'), agents=document.getElementById('agents');
+  const RATE={annual:29,monthly:36}, AED=3.6725;
   const fmt=n=>n.toLocaleString('en-US');
-  function setBilling(annual){
-    bill.setAttribute('aria-checked',annual);
-    document.querySelectorAll('.plan .amt').forEach(el=>{
-      const m=+el.dataset.m,a=+el.dataset.a, plan=el.closest('.plan');
-      el.classList.add('sw');
-      setTimeout(()=>{ el.textContent=fmt(annual?a:m); el.classList.remove('sw'); },reduce?0:160);
-      const b=plan.querySelector('[data-bill]'); if(b) b.textContent=annual?`Billed annually · AED ${fmt(a*12)} / year · you save AED ${fmt((m-a)*12)}`:'Billed monthly · cancel any time';
-      const w=plan.querySelector('[data-was]'); if(w) w.textContent=annual?`AED ${fmt(m)} monthly`:'';
-    });
+  const usd=n=>'$'+fmt(Math.round(n));
+  function render(){
+    const annual=bill.getAttribute('aria-checked')==='true';
+    const rate=annual?RATE.annual:RATE.monthly, n=+agents.value;
+    const amt=document.querySelector('.plan .amt');
+    amt.classList.add('sw');
+    setTimeout(()=>{ amt.textContent=rate; amt.classList.remove('sw'); },reduce?0:160);
+    document.querySelector('[data-bill]').textContent=annual?`Billed annually · $${RATE.annual*12} per agent / year`:'Billed monthly · cancel any time';
+    document.getElementById('aedNote').textContent=`≈ AED ${Math.round(rate*AED)} per agent / month`;
+    document.getElementById('agentsOut').textContent=n;
+    document.getElementById('perMo').textContent=usd(n*rate);
+    document.getElementById('perYr').textContent=usd(n*rate*12);
+    document.getElementById('saveYr').textContent=usd(n*(RATE.monthly-RATE.annual)*12);
+    document.querySelector('.calc .save-box').style.display=annual?'':'none';
+    agents.style.setProperty('--fill',((n-3)/57*100).toFixed(1)+'%');
   }
-  bill.addEventListener('click',()=>setBilling(bill.getAttribute('aria-checked')!=='true'));
-  setBilling(true);
+  bill.addEventListener('click',()=>{ bill.setAttribute('aria-checked',bill.getAttribute('aria-checked')!=='true'); render(); });
+  agents.addEventListener('input',render);
+  render();
 
   // form
   const form=document.getElementById('demoForm');
