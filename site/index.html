@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="Propsmart — the real estate CRM built inside a Dubai brokerage. Leads, calls, listings, buildings, deals and commission in one system.">
 <title>Propsmart</title>
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='560 480 780 980'%3E%3Crect x='560' y='480' width='780' height='980' rx='140' fill='%231FA87A'/%3E%3Cg fill='none' stroke='%23fff' stroke-width='135'%3E%3Cpath d='M707 622V1400'/%3E%3Cpath d='M728 806L965 626L1225 792V905C1225 1060 1080 1150 890 1150' stroke-linejoin='round'/%3E%3C/g%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Crect width='200' height='200' rx='44' fill='%231FA87A'/%3E%3Cg transform='translate(24,0)'%3E%3Cpath d='M14 26 L109 73.5 L139 58.5 L44 11 Z' fill='%23BFF0DC'/%3E%3Cpath transform='matrix(19,9.5,0,15,14,26)' fill='%23fff' d='M0 0 L5 0 L5 4.6 L2.15 4.6 L2.15 9.6 L0 9.6 Z'/%3E%3Cpath transform='matrix(19,9.5,0,15,14,26)' fill='%230C1524' d='M2.15 1.25 L3.6 1.25 L3.6 3.35 L2.15 3.35 Z'/%3E%3C/g%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=JetBrains+Mono:wght@400;500;600&display=swap">
 <style>
@@ -13,7 +13,7 @@
   --paper:#F7F9F8; --card:#FFFFFF; --ink:#0C1524; --ink-2:#121D30; --ink-3:#1A2740;
   --text:#101828; --text-2:#4A5768; --text-3:#7A8797;
   --line:#DDE4E0; --line-2:#EAEFEC;
-  --em:#1FA87A; --em-deep:#137A58; --em-tint:#E4F5EE; --em-tint-2:#CFEEDF;
+  --em:#1FA87A; --em2:#3ECB9B; --em-deep:#137A58; --em-tint:#E4F5EE; --em-tint-2:#CFEEDF;
   --amber:#B45309; --amber-bg:#FFF4E5; --amber-line:#F5D8A8;
   --red:#C2261E; --red-bg:#FDECEA; --red-line:#F5B8B3;
   --blue:#1D4ED8; --blue-bg:#E8EFFD; --violet:#6D28D9; --violet-bg:#F0E9FD;
@@ -30,7 +30,7 @@
 @media (prefers-color-scheme:dark){
   :root:not([data-theme="light"]){
     --paper:#0C1524; --card:#121D30; --text:#EEF2F0; --text-2:#A7B3C2; --text-3:#6F7C8C;
-    --line:#22304A; --line-2:#1A2740; --em:#2FC38F; --em-deep:#5BD6AC; --em-tint:#11302A; --em-tint-2:#164236;
+    --line:#22304A; --line-2:#1A2740; --em:#2FC38F; --em2:#68DDB4; --em-deep:#5BD6AC; --em-tint:#11302A; --em-tint-2:#164236;
     --amber:#F2B25A; --amber-bg:#2A2010; --amber-line:#5A4420; --red:#F0837C; --red-bg:#2E1515; --red-line:#5E2A2A;
     --blue:#8AB0FF; --blue-bg:#152447; --violet:#C4A6FF; --violet-bg:#2A1F4A;
     --shadow:0 1px 2px rgba(0,0,0,.3),0 12px 40px -12px rgba(0,0,0,.5); --shadow-lg:0 2px 4px rgba(0,0,0,.4),0 40px 80px -24px rgba(0,0,0,.7);
@@ -39,7 +39,7 @@
 }
 :root[data-theme="dark"]{
   --paper:#0C1524; --card:#121D30; --text:#EEF2F0; --text-2:#A7B3C2; --text-3:#6F7C8C;
-  --line:#22304A; --line-2:#1A2740; --em:#2FC38F; --em-deep:#5BD6AC; --em-tint:#11302A; --em-tint-2:#164236;
+  --line:#22304A; --line-2:#1A2740; --em:#2FC38F; --em2:#68DDB4; --em-deep:#5BD6AC; --em-tint:#11302A; --em-tint-2:#164236;
   --amber:#F2B25A; --amber-bg:#2A2010; --amber-line:#5A4420; --red:#F0837C; --red-bg:#2E1515; --red-line:#5E2A2A;
   --blue:#8AB0FF; --blue-bg:#152447; --violet:#C4A6FF; --violet-bg:#2A1F4A;
   --shadow:0 1px 2px rgba(0,0,0,.3),0 12px 40px -12px rgba(0,0,0,.5); --shadow-lg:0 2px 4px rgba(0,0,0,.4),0 40px 80px -24px rgba(0,0,0,.7);
@@ -77,8 +77,10 @@ p{margin:0}
 .nav.scrolled{background:color-mix(in srgb,var(--paper) 82%,transparent);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-color:var(--line-2)}
 .nav .wrap{display:flex;align-items:center;justify-content:space-between;height:68px}
 .brand{display:inline-flex;align-items:center;color:var(--text)}
-.brand .wordmark{height:30px;width:auto;display:block}
-footer .brand .wordmark{height:22px}
+.brand .wordmark{height:32px;width:auto;display:block;overflow:visible}
+footer .brand .wordmark{height:26px}
+.brand .pm{transition:transform .35s cubic-bezier(.2,.7,.1,1)}
+.brand:hover .pm{transform:translateY(-3px)}
 .nav-links{display:flex;gap:1.75rem;font-size:.92rem;font-weight:500;color:var(--text-2)}
 .nav-links a:hover{color:var(--text)}
 .nav .btn{padding:.6rem 1rem;font-size:.9rem}
@@ -560,7 +562,7 @@ video.vid{display:block;background:#000}
 
 <header class="nav" id="nav">
   <div class="wrap">
-    <a class="brand" href="#top" aria-label="Propsmart"><svg class="wordmark" viewBox="0 0 590 132" aria-hidden="true"><g transform="translate(-67.5 -38.3) scale(0.118)" fill="none" stroke="currentColor" stroke-width="135"><path d="M707 622V1400"/><path d="M728 806L965 626L1225 792V905C1225 1060 1080 1150 890 1150" stroke-linejoin="round"/></g><text x="90" y="102" font-family="'Plus Jakarta Sans',ui-sans-serif,system-ui,sans-serif" font-weight="700" font-size="112" letter-spacing="-3" fill="currentColor">rop<tspan style="fill:var(--em-deep)">smart</tspan></text></svg></a>
+    <a class="brand" href="#top" aria-label="Propsmart"><svg class="wordmark" viewBox="0 6 840 190" aria-hidden="true"><g class="pm"><path d="M14 26 L109 73.5 L139 58.5 L44 11 Z" fill="var(--em2)"/><path transform="matrix(19,9.5,0,15,14,26)" fill="var(--em)" d="M0 0 L5 0 L5 4.6 L2.15 4.6 L2.15 9.6 L0 9.6 Z"/><path transform="matrix(19,9.5,0,15,14,26)" fill="currentColor" d="M2.15 1.25 L3.6 1.25 L3.6 3.35 L2.15 3.35 Z"/></g><text x="196" y="139" font-family="'Plus Jakarta Sans',ui-sans-serif,system-ui,sans-serif" font-weight="800" font-size="118" letter-spacing="-3" fill="currentColor">prop<tspan style="fill:var(--em)">smart</tspan></text></svg></a>
     <nav class="nav-links" aria-label="Primary">
       <a href="#chaos">Why it exists</a><a href="#modules">Modules</a><a href="#watch">Tour</a><a href="#ai">AI</a><a href="#why">Bespoke</a><a href="#pricing">Pricing</a><a href="#faq">FAQ</a>
     </nav>
@@ -1144,7 +1146,7 @@ video.vid{display:block;background:#000}
 
 <footer>
   <div class="wrap">
-    <a class="brand" href="#top" aria-label="Propsmart"><svg class="wordmark" viewBox="0 0 590 132" aria-hidden="true"><g transform="translate(-67.5 -38.3) scale(0.118)" fill="none" stroke="currentColor" stroke-width="135"><path d="M707 622V1400"/><path d="M728 806L965 626L1225 792V905C1225 1060 1080 1150 890 1150" stroke-linejoin="round"/></g><text x="90" y="102" font-family="'Plus Jakarta Sans',ui-sans-serif,system-ui,sans-serif" font-weight="700" font-size="112" letter-spacing="-3" fill="currentColor">rop<tspan style="fill:var(--em-deep)">smart</tspan></text></svg></a>
+    <a class="brand" href="#top" aria-label="Propsmart"><svg class="wordmark" viewBox="0 6 840 190" aria-hidden="true"><g class="pm"><path d="M14 26 L109 73.5 L139 58.5 L44 11 Z" fill="var(--em2)"/><path transform="matrix(19,9.5,0,15,14,26)" fill="var(--em)" d="M0 0 L5 0 L5 4.6 L2.15 4.6 L2.15 9.6 L0 9.6 Z"/><path transform="matrix(19,9.5,0,15,14,26)" fill="currentColor" d="M2.15 1.25 L3.6 1.25 L3.6 3.35 L2.15 3.35 Z"/></g><text x="196" y="139" font-family="'Plus Jakarta Sans',ui-sans-serif,system-ui,sans-serif" font-weight="800" font-size="118" letter-spacing="-3" fill="currentColor">prop<tspan style="fill:var(--em)">smart</tspan></text></svg></a>
     <nav aria-label="Footer"><a href="#modules">Modules</a><a href="#watch">Tour</a><a href="#ai">AI</a><a href="#why">Bespoke</a><a href="#pricing">Pricing</a><a href="#demo">Book a demo</a><a href="#faq">FAQ</a></nav>
     <p class="small">© 2026 Propsmart · Dubai, UAE</p>
   </div>
